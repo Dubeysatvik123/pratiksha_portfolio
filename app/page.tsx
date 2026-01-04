@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, FileText } from "lucide-react"
 import { Nav } from "@/components/nav"
+import { MobileNav } from "@/components/mobile-nav"
 import { ProjectCard } from "@/components/project-card"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/reveal"
@@ -8,6 +9,7 @@ import { ThreeCanvas } from "@/components/three-canvas"
 export default function Home() {
   return (
     <div className="relative mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 overflow-x-hidden">
+      <MobileNav />
       <ThreeCanvas />
 
       <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_50%_50%,_var(--color-primary),transparent_100%)] opacity-[0.02]" />
@@ -56,7 +58,10 @@ export default function Home() {
         {/* Right Column: Scrollable Content */}
         <main className="pt-24 lg:w-1/2 lg:py-24">
           <Reveal delay={100}>
-            <section id="about" className="mb-24 scroll-mt-16 lg:mb-36 lg:scroll-mt-24">
+            <section id="about" className="mb-24 scroll-mt-24 lg:mb-36">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:hidden">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-foreground">About</h2>
+              </div>
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">About</h2>
               </div>
@@ -90,27 +95,82 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={200}>
-            <section id="experience" className="mb-24 scroll-mt-16 lg:mb-36 lg:scroll-mt-24">
+            <section id="experience" className="mb-24 scroll-mt-24 lg:mb-36">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">Experience</h2>
               </div>
               <div className="space-y-12">
                 <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100">
                   <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground sm:col-span-2">
-                    2024 — Present
+                    Internship
                   </header>
                   <div className="z-10 sm:col-span-6">
                     <h3 className="font-medium leading-snug text-foreground">
                       <div>
                         <span className="inline-flex items-baseline font-medium leading-tight text-foreground text-base">
-                          Full Stack Developer Intern · TechCorp
+                          Front-End Developer · Rysav Technologies Pvt. Ltd.
                         </span>
                       </div>
                     </h3>
-                    <p className="mt-2 text-sm leading-normal text-muted-foreground">
-                      Building and maintaining critical components used to construct modern web platforms. Collaborating
-                      with cross-functional teams to implement accessible and performant UI features.
-                    </p>
+                    <ul className="mt-2 text-sm leading-normal text-muted-foreground list-disc list-outside ml-4 space-y-2">
+                      <li>
+                        Built responsive, user-friendly web interfaces using HTML, CSS, JavaScript, and modern
+                        frameworks (React/Next.js).
+                      </li>
+                      <li>
+                        Translated UI/UX designs into interactive web components with attention to performance,
+                        accessibility, and cross-browser compatibility.
+                      </li>
+                      <li>
+                        Optimized website functionality and enhanced user experience through modular and maintainable
+                        code.
+                      </li>
+                      <li>
+                        Collaborated with backend developers to integrate APIs and deliver end-to-end functional web
+                        applications.
+                      </li>
+                      <li>
+                        Strengthened skills in frontend development, debugging, and agile project workflows while
+                        contributing to impactful digital products.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100">
+                  <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground sm:col-span-2">
+                    Internship
+                  </header>
+                  <div className="z-10 sm:col-span-6">
+                    <h3 className="font-medium leading-snug text-foreground">
+                      <div>
+                        <span className="inline-flex items-baseline font-medium leading-tight text-foreground text-base">
+                          RAG and GenAI Developer · Sky Streamers Pvt. Ltd.
+                        </span>
+                      </div>
+                    </h3>
+                    <ul className="mt-2 text-sm leading-normal text-muted-foreground list-disc list-outside ml-4 space-y-2">
+                      <li>
+                        Developed and optimized a Retrieval-Augmented Generation (RAG) based project, contributing to
+                        improved efficiency and data-driven decision-making.
+                      </li>
+                      <li>
+                        Implemented advanced algorithms to retrieve and generate relevant information, ensuring high
+                        accuracy and scalability.
+                      </li>
+                      <li>
+                        Collaborated with the team to design and maintain clean, modular code, following best software
+                        development practices.
+                      </li>
+                      <li>
+                        Demonstrated problem-solving, technical expertise, and initiative, receiving commendation for
+                        proactive work.
+                      </li>
+                      <li>
+                        Gained hands-on experience in AI-assisted systems, data handling, and project lifecycle
+                        management.
+                      </li>
+                    </ul>
                   </div>
                 </div>
 
@@ -136,27 +196,29 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={300}>
-            <section id="projects" className="mb-24 scroll-mt-16 lg:mb-36 lg:scroll-mt-24">
+            <section id="projects" className="mb-24 scroll-mt-24 lg:mb-36">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">Projects</h2>
               </div>
               <div className="group/list flex flex-col gap-12">
+                {/* Manthan AI project as the featured first item */}
+                <ProjectCard
+                  title="Manthan The AI"
+                  description="An intelligent startup idea evaluator powered by Google's Gemini AI. Provides expert-level analysis across feasibility, market potential, build strategy, and risks in seconds."
+                  tags={["Gemini AI", "Python", "Gradio", "NLP"]}
+                  link="#"
+                />
+                {/* Online Registration Process project */}
+                <ProjectCard
+                  title="Online Registration System"
+                  description="A comprehensive web application designed to streamline and automate the online registration process with secure data handling."
+                  tags={["React", "Node.js", "Express", "MongoDB"]}
+                  link="#"
+                />
                 <ProjectCard
                   title="Project One: AI Task Manager"
                   description="A sophisticated task management application powered by AI to prioritize and categorize your daily workflow automatically."
                   tags={["React", "Next.js", "OpenAI", "Tailwind CSS"]}
-                  link="#"
-                />
-                <ProjectCard
-                  title="Project Two: E-commerce Dashboard"
-                  description="Real-time analytics dashboard for e-commerce store owners featuring interactive charts and inventory management."
-                  tags={["TypeScript", "Recharts", "Prisma", "PostgreSQL"]}
-                  link="#"
-                />
-                <ProjectCard
-                  title="Project Three: Social Connect"
-                  description="A clean, minimal social networking platform focused on developer communities and collaboration."
-                  tags={["React", "Node.js", "Socket.io", "MongoDB"]}
                   link="#"
                 />
               </div>
@@ -164,7 +226,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={400}>
-            <section id="contact" className="scroll-mt-16 lg:scroll-mt-24">
+            <section id="contact" className="scroll-mt-24 lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">Contact</h2>
               </div>
